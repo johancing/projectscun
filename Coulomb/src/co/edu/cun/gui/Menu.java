@@ -75,7 +75,10 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 					+ " GNU General Public License for more details.\n\n"
 
 					+ "You should have received a copy of the GNU General Public License\n "
-					+ " along with this program.  If not, see <http://www.gnu.org/licenses/>.";
+					+ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+					+ "Versión: 1.1 \n\n"
+					
+					+ "Repositorio:  https://github.com/johancing/projectscun";
 			JOptionPane.showMessageDialog(null, message);
 		}
 	}
