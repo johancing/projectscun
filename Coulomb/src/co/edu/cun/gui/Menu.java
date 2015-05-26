@@ -21,6 +21,7 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 	private JButton calcular;
 	private Mediador mediador;
 	private JButton campo;
+	private JButton limpiar;
 	private JComboBox<String> ejemplos;
 
 	public Menu(Mediador mediador) {
@@ -33,6 +34,9 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 		eliminar.setMnemonic(0);
 		eliminar.addActionListener(this);
 		this.add(eliminar);
+		limpiar = new JButton("Limpiar");
+		limpiar.addActionListener(this);
+		this.add(limpiar);
 		campo = new JButton("Crear Campo");
 		campo.setMnemonic(0);
 		campo.addActionListener(this);
@@ -57,6 +61,8 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 		if (e.getSource() == particula) {
 			if (mediador != null)
 				mediador.setAgregarParticula(true);
+		} else if (e.getSource() == limpiar){
+			mediador.limpiar();
 		} else if (e.getSource() == salir) {
 			System.exit(0);
 		} else if (e.getSource() == eliminar) {
@@ -77,7 +83,8 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 					+ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n"
 					
 					+ "Repositorio:  https://github.com/johancing/projectscun \n"
-					+ "Versión: 1.1";
+					+ "Versión: 1.1\n"
+					+ "johanc.ing@gmail.com";
 			JOptionPane.showMessageDialog(null, message);
 		}
 	}

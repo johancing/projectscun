@@ -83,6 +83,10 @@ public class Mediador {
 	public PanelPropiedades getPanel() {
 		return panel;
 	}
+	
+	public void limpiar(){
+		lienzo.limpiar();
+	}
 
 	public void setPanel(PanelPropiedades panel) {
 		this.panel = panel;

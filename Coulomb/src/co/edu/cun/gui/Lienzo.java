@@ -8,6 +8,8 @@ import java.awt.event.MouseListener;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.swing.text.TabableView;
+
 import co.edu.cun.control.Mediador;
 import co.edu.cun.control.Particula2D;
 import co.edu.cun.core.Particula;
@@ -32,7 +34,8 @@ public class Lienzo extends Canvas implements MouseListener {
 
 	public void paint(Graphics g) {
 		super.paint(g);
-		if (particulas != null) {
+		if (particulas != null) {		
+			drawLines(g);
 			for (Particula2D p : particulas) {
 				p.paint(g);
 			}
@@ -67,6 +70,22 @@ public class Lienzo extends Canvas implements MouseListener {
 			}
 			mediador.setAgregarParticula(false);
 		}
+	}
+
+	private void drawLines(Graphics g) {
+		Color c1 = g.getColor();
+		g.setColor(Color.gray);
+		if (particulas != null) {
+			for (int i = 0; i < particulas.size() - 1; i++) {
+				for (int j = i + 1; j < particulas.size(); j++) {
+					g.drawLine(particulas.get(i).getPosX() + 10, particulas
+							.get(i).getPosY() + 10,
+							particulas.get(j).getPosX() + 10, particulas.get(j)
+									.getPosY() + 10);
+				}
+			}
+		}
+		g.setColor(c1);
 	}
 
 	private void seleccionarParticula() {
@@ -114,8 +133,7 @@ public class Lienzo extends Canvas implements MouseListener {
 	private void crearParticula(String nombre, Color color) {
 		Particula particula = new Particula(Particula.CARGA_NEUTRON);
 		contador++;
-		Particula2D p = new Particula2D(nombre + contador, posX, posY,
-				color);
+		Particula2D p = new Particula2D(nombre + contador, posX, posY, color);
 		p.setParticula(particula);
 		mediador.setParticula(p);
 		if (particulas == null)
