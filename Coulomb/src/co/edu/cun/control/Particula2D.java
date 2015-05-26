@@ -37,7 +37,12 @@ public class Particula2D {
 			g.drawString(tittle, getPosX(), getPosY());
 		}
 		Color c = g.getColor();
-		g.setColor(getColor());
+		if (getParticula().getCarga() == 0)
+			g.setColor(Color.gray);
+		else if (getParticula().getCarga() < 0)
+			g.setColor(Color.red);
+		else
+			g.setColor(Color.blue);	
 		g.fillOval(getPosX(), getPosY(), TAMANO, TAMANO);
 		g.setColor(c);
 	}

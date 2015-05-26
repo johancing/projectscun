@@ -63,6 +63,7 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 				mediador.setAgregarParticula(true);
 		} else if (e.getSource() == limpiar){
 			mediador.limpiar();
+			ejemplos.setSelectedIndex(0);
 		} else if (e.getSource() == salir) {
 			System.exit(0);
 		} else if (e.getSource() == eliminar) {
