@@ -5,8 +5,8 @@ import co.edu.cun.core.Particula;
 
 public class FuerzaElectrica {
 
-	// private static final double K = 8987500000.0;
-	private static final double K = 9000000000.0;
+	private static final double K = 8987500000.0;
+	//private static final double K = 9000000000.0;
 
 	private static double getFuerzaElectricaNeta(Particula2D a, Particula2D b,
 			int escala) {

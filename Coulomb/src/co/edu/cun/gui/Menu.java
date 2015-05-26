@@ -36,7 +36,6 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 		campo = new JButton("Crear Campo");
 		campo.setMnemonic(0);
 		campo.addActionListener(this);
-		this.add(campo);
 		calcular = new JButton("Licencia");
 		calcular.setMnemonic(0);
 		calcular.addActionListener(this);
@@ -44,7 +43,7 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 		ejemplos = new JComboBox<String>();
 		ejemplos.addItem("");
 		ejemplos.addItem("Linea Recta");
-		ejemplos.addItem("Trienagulo");
+		ejemplos.addItem("Triangulo");
 		ejemplos.addItemListener(this);
 		this.add(ejemplos);
 		salir = new JButton("Salir");
@@ -75,10 +74,10 @@ public class Menu extends JMenuBar implements ActionListener, ItemListener {
 					+ " GNU General Public License for more details.\n\n"
 
 					+ "You should have received a copy of the GNU General Public License\n "
-					+ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
-					+ "Versión: 1.1 \n\n"
+					+ "along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n"
 					
-					+ "Repositorio:  https://github.com/johancing/projectscun";
+					+ "Repositorio:  https://github.com/johancing/projectscun \n"
+					+ "Versión: 1.1";
 			JOptionPane.showMessageDialog(null, message);
 		}
 	}
